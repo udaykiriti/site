@@ -1,0 +1,277 @@
+body {
+  background: repeating-linear-gradient(45deg, #f9f9f9 0 6px, #ffffff 6px 12px);
+  font-family: "Courier New", Courier, monospace;
+  color: #000;
+  margin: 0;
+  padding: 18px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Use border-box to make sizing more predictable */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  border: 4px solid #004080;
+  background: #f8fcff;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.08);
+  padding: 12px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px dashed #666;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  font-size: 13px;
+}
+
+.photo {
+  width: 120px;
+  height: 120px;
+  border: 2px solid #000;
+  background: #fff url("your-photo.jpg") center/cover no-repeat;
+  margin-left: auto;
+  box-shadow: 3px 3px 0 #888;
+  flex-shrink: 0;
+}
+
+nav {
+  width: 220px;
+  float: left;
+  margin-right: 18px;
+  font-size: 14px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 6px;
+  margin: 0;
+}
+
+nav li {
+  margin: 8px 0;
+}
+
+a {
+  color: #0000ee;
+  text-decoration: underline;
+}
+a:visited {
+  color: #551a8b;
+}
+
+main {
+  overflow: hidden;
+  padding-bottom: 18px;
+}
+
+.box {
+  border: 2px inset #ccc;
+  background: linear-gradient(180deg, #fff, #f2f9ff);
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.project-list li {
+  margin: 6px 0;
+}
+
+/* Project list micro-styling */
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.proj-meta {
+  color: #004080; /* match retro border color */
+  font-size: 12px;
+  margin-left: 6px;
+}
+.proj-desc {
+  margin: 4px 0 8px 0;
+  color: #222;
+  font-size: 14px;
+}
+
+/* Accessibility: visible focus for keyboard users */
+a:focus {
+  outline: 2px dashed #004080;
+  outline-offset: 3px;
+}
+
+/* Project card hover/focus styles */
+.project-list li {
+  margin: 6px 0;
+  padding: 8px 10px;
+  border-left: 4px solid transparent;
+  transition: background 150ms ease, transform 150ms ease,
+    border-color 150ms ease;
+  border-radius: 3px;
+}
+.project-list li:hover,
+.project-list li:focus-within {
+  background: #fffaf0;
+  transform: translateY(-2px);
+  border-left-color: #004080;
+}
+.project-list li a {
+  font-weight: 700;
+  color: #0000ee;
+}
+.project-list li a:hover,
+.project-list li a:focus {
+  color: #002366;
+  text-decoration: none;
+}
+
+footer {
+  border-top: 2px dotted #666;
+  padding-top: 8px;
+  margin-top: 12px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.counter {
+  font-size: 12px;
+  border: 1px solid #000;
+  display: inline-block;
+  padding: 4px 8px;
+  background: #fffef0;
+}
+
+.marquee {
+  margin: 8px 0;
+  overflow: hidden;
+  background: linear-gradient(90deg, #fffef8, #f8fcff);
+  border: 1px dashed #ddd;
+  padding: 6px 8px;
+}
+
+.marquee-inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 10s linear infinite alternate;
+  font-weight: 600;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-40%);
+  }
+}
+
+table.skills {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.skills th,
+table.skills td {
+  border: 1px solid #000;
+  padding: 4px;
+  text-align: left;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.social-links a {
+  border: 1px solid #000;
+  background: #f9f9f9;
+  padding: 4px 8px;
+  font-size: 14px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 980px) {
+  .page {
+    width: auto;
+    margin: 12px;
+  }
+  nav {
+    float: none;
+    width: auto;
+    margin: 0 0 12px 0;
+  }
+  .photo {
+    display: none;
+  }
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .page {
+    padding: 10px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  nav li {
+    margin: 4px 0;
+  }
+
+  .box {
+    padding: 10px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .page {
+    padding: 8px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
