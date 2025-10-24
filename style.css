@@ -47,7 +47,7 @@ h1 {
   width: 120px;
   height: 120px;
   border: 2px solid #000;
-  background: #fff url("your-photo.jpg") center/cover no-repeat;
+  background: #fff url("profile.png") center/cover no-repeat;
   margin-left: auto;
   box-shadow: 3px 3px 0 #888;
   flex-shrink: 0;
