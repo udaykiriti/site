@@ -1,3 +1,19 @@
+// Loading spinner
+(function () {
+    const spinner = document.getElementById('loadingSpinner');
+    if (!spinner) return;
+
+    // Hide spinner when page is fully loaded
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            spinner.classList.add('fade-out');
+            setTimeout(() => {
+                spinner.style.display = 'none';
+            }, 500);
+        }, 800); // Show spinner for at least 800ms
+    });
+})();
+
 // Typing animation for header
 (function () {
     const subtitle = document.querySelector('.subtitle');
