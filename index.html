@@ -4,224 +4,250 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description"
-    content="Portfolio of Uday Kiriti, a Software Developer specializing in C++ and Web Technologies. View projects, resume, and contact info." />
+  <meta name="description" content="Uday Kiriti - Software Developer specializing in C++ and Web Technologies" />
+  <meta name="author" content="Uday Kiriti" />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Uday Kiriti - Software Developer" />
-  <meta property="og:description"
-    content="Portfolio of Uday Kiriti, a Software Developer specializing in C++ and Web Technologies." />
-  <title>Uday Kiriti</title>
+  <meta property="og:description" content="Software Developer specializing in C++ and Web Technologies" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://udaykiriti.github.io" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Uday Kiriti - Software Developer" />
+  <meta name="twitter:description" content="Software Developer specializing in C++ and Web Technologies" />
+
+  <title>uday kiriti</title>
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>U</text></svg>" />
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"
+    as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Uday Kiriti",
+    "url": "https://udaykiriti.github.io",
+    "jobTitle": "Software Developer",
+    "description": "Software Developer specializing in C++ and Web Technologies",
+    "email": "udaykiriti624@gmail.com",
+    "sameAs": [
+      "https://github.com/udaykiriti",
+      "https://leetcode.com/u/Uday9__/"
+    ],
+    "knowsAbout": ["C++", "Java", "Python", "Rust", "React", "Spring Boot", "Web Development"],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "KL University"
+    }
+  }
+  </script>
 </head>
 
 <body>
-  <!-- Scroll progress bar -->
-  <div class="progress-bar">
+  <!-- Skip to content link -->
+  <a href="#main-content" class="skip-link">skip to content</a>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-text">loading<span class="loader-dots"></span></div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <div class="progress-bar" role="progressbar" aria-label="Page scroll progress">
     <div class="progress-bar-fill"></div>
   </div>
 
   <div class="crt-overlay"></div>
 
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
   <div class="page">
     <header>
       <div>
-        <h1>Uday Kiriti<span class="cursor">_</span></h1>
-        <div class="subtitle" style="opacity: 0;">Software Developer | C++ & Web</div>
+        <h1>uday kiriti<span class="cursor" aria-hidden="true">_</span></h1>
+        <div class="subtitle" style="opacity: 0;">software developer / c++ and web</div>
       </div>
-      <div class="photo" title="Uday Kiriti"></div>
+      <div class="photo" role="img" aria-label="Uday Kiriti profile photo"></div>
     </header>
 
-    <div class="marquee">
-      <div class="marquee-inner" role="note" aria-live="polite">
-        Welcome to my portfolio! Browse through my projects and experience...
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-inner">
+        welcome to my portfolio — explore projects and experience — building systems and web applications — open to
+        collaborations
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        welcome to my portfolio — explore projects and experience — building systems and web applications — open to
+        collaborations
       </div>
     </div>
 
-    <nav class="box">
+    <nav class="box" aria-label="Main navigation">
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#resume">resume</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
       <hr />
     </nav>
 
-    <main>
+    <main id="main-content">
       <section id="about" class="box">
-        <h2>About Me</h2>
+        <h2>About</h2>
         <p>
-          Hello! I'm <strong>Uday Kiriti</strong>, a software developer who
-          loves exploring both low-level programming and web technologies. I
-          enjoy building organized systems.
+          software developer with interest in systems programming and web technologies.
+          i enjoy building efficient, well-organized systems and solving complex problems.
         </p>
         <ul>
-          <li>Currently learning: Systems design, CMake</li>
+          <li>currently learning systems design and nginx</li>
+          <li>interested in distributed systems and performance optimization</li>
+          <li>exploring rust and low-level programming</li>
         </ul>
       </section>
 
-      <section id="projects" class="box">
-        <h2>Selected Projects</h2>
-        <ul class="project-list">
-          <li>
-            <a href="https://github.com/udaykiriti/OnlineWorkshop" target="_blank">OnlineWorkshop</a>
-            <span class="proj-meta">JavaScript</span>
-            <div class="proj-desc">
-              Frontend client for the Online Workshop application (React UI
-              for browsing and participating in workshops).
-            </div>
-          </li>
-
-          <li>
-            <a href="https://github.com/udaykiriti/OnlineWorkshopServer" target="_blank">OnlineWorkshopServer</a>
-            <span class="proj-meta">Java</span>
-            <div class="proj-desc">
-              Backend server for the Online Workshop app (Spring Boot REST
-              APIs, auth, content delivery).
-            </div>
-          </li>
-
-          <li>
-            <a href="https://github.com/udaykiriti/MovieRecommendation" target="_blank">MovieRecommendation</a>
-            <span class="proj-meta">JavaScript</span>
-            <div class="proj-desc">
-              Django-based movie website / recommendation demo.
-            </div>
-          </li>
-
-          <li>
-            <a href="https://github.com/udaykiriti/machine-learning" target="_blank">machine-learning</a>
-            <span class="proj-meta">Python</span>
-            <div class="proj-desc">
-              A collection of ML projects, tutorials and notebooks — a
-              hands-on machine learning vault.
-            </div>
-          </li>
-
-          <li>
-            <a href="https://github.com/udaykiriti/ImageClassifier" target="_blank">ImageClassifier</a>
-            <span class="proj-meta">C++</span>
-            <div class="proj-desc">
-              C++ project for classifying MNIST images (KNN and Tiny-dnn
-              neural network implementations).
-            </div>
-          </li>
-
-          <li>
-            <a href="https://github.com/udaykiriti/Programming-cpp" target="_blank">Programming-cpp</a>
-            <span class="proj-meta">C++</span>
-            <div class="proj-desc">
-              C++ problem solving on different platforms.
-            </div>
-          </li>
-
-          <li>
-            <a href="https://github.com/udaykiriti/StudentCourseManagementSystem"
-              target="_blank">StudentCourseManagementSystem</a>
-            <span class="proj-meta">JavaScript</span>
-            <div class="proj-desc">
-              React-based app for managing student courses (bootstrapped with
-              Create React App).
-            </div>
-          </li>
-
-          <li>
-            <a href="https://github.com/udaykiriti/StudentFeedbackSystemBackend"
-              target="_blank">StudentFeedbackSystemBackend</a>
-            <span class="proj-meta">Java</span>
-            <div class="proj-desc">
-              Backend RESTful API for a Student Feedback System (Java, Spring
-              Boot, Hibernate).
-            </div>
-          </li>
-
-          <li>
-            <a href="https://github.com/udaykiriti/StudentFeedBackSystemFronteEnd"
-              target="_blank">StudentFeedBackSystemFronteEnd</a>
-            <span class="proj-meta">JavaScript</span>
-            <div class="proj-desc">
-              React frontend for the Student Feedback System.
-            </div>
-          </li>
-
-          <li>
-            <a href="https://gitlab.com/udaykiriti624/chatvialan-rust.git" target="_blank">Chat Through LAN without
-              ISP</a>
-            <span class="proj-meta">Rust</span>
-            <div class="proj-desc">
-              By using Rust && Tcp/Ip.
-              Rooms and Sharing Files of Limited size.
-            </div>
-          </li>
-        </ul>
+      <section id="projects">
+        <div class="box">
+          <h2>Projects</h2>
+          <ul class="project-list">
+            <li>
+              <a href="https://github.com/udaykiriti/OnlineWorkshop" target="_blank" rel="noopener">OnlineWorkshop</a>
+              <span class="proj-meta">React</span>
+              <div class="proj-desc">frontend client for online workshop platform with interactive ui</div>
+            </li>
+            <li>
+              <a href="https://github.com/udaykiriti/OnlineWorkshopServer" target="_blank"
+                rel="noopener">OnlineWorkshopServer</a>
+              <span class="proj-meta">Java</span>
+              <div class="proj-desc">spring boot backend with rest apis and authentication</div>
+            </li>
+            <li>
+              <a href="https://github.com/udaykiriti/MovieRecommendation" target="_blank"
+                rel="noopener">MovieRecommendation</a>
+              <span class="proj-meta">Python</span>
+              <div class="proj-desc">django-based movie recommendation system</div>
+            </li>
+            <li>
+              <a href="https://github.com/udaykiriti/machine-learning" target="_blank"
+                rel="noopener">machine-learning</a>
+              <span class="proj-meta">Python</span>
+              <div class="proj-desc">collection of ml projects and jupyter notebooks</div>
+            </li>
+            <li>
+              <a href="https://github.com/udaykiriti/ImageClassifier" target="_blank" rel="noopener">ImageClassifier</a>
+              <span class="proj-meta">C++</span>
+              <div class="proj-desc">mnist image classification using knn and neural networks</div>
+            </li>
+            <li>
+              <a href="https://github.com/udaykiriti/Programming-cpp" target="_blank" rel="noopener">Programming-cpp</a>
+              <span class="proj-meta">C++</span>
+              <div class="proj-desc">competitive programming solutions and algorithms</div>
+            </li>
+            <li>
+              <a href="https://github.com/udaykiriti/StudentCourseManagementSystem" target="_blank"
+                rel="noopener">StudentCourseManagement</a>
+              <span class="proj-meta">React</span>
+              <div class="proj-desc">course management application with student interface</div>
+            </li>
+            <li>
+              <a href="https://github.com/udaykiriti/StudentFeedbackSystemBackend" target="_blank"
+                rel="noopener">StudentFeedbackBackend</a>
+              <span class="proj-meta">Java</span>
+              <div class="proj-desc">rest api for student feedback with spring boot and hibernate</div>
+            </li>
+            <li>
+              <a href="https://github.com/udaykiriti/StudentFeedBackSystemFronteEnd" target="_blank"
+                rel="noopener">StudentFeedbackFrontend</a>
+              <span class="proj-meta">React</span>
+              <div class="proj-desc">frontend interface for student feedback system</div>
+            </li>
+            <li>
+              <a href="https://gitlab.com/udaykiriti624/chatvialan-rust.git" target="_blank" rel="noopener">LAN Chat</a>
+              <span class="proj-meta">Rust</span>
+              <div class="proj-desc">peer-to-peer chat application over tcp/ip with room support</div>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section id="resume" class="box">
         <h2>Resume</h2>
-        <h3>Education</h3>
-        <p>B.Tech in Computer Science, KL University [2022-2026]</p>
+        <h3>education</h3>
+        <p><strong>b.tech computer science</strong> — kl university, 2022-2026</p>
 
-        <h3>Skills</h3>
+        <h3>skills</h3>
         <table class="skills">
-          <tr>
-            <th>Category</th>
-            <th>Technologies</th>
-          </tr>
-          <tr>
-            <td>Programming</td>
-            <td>C, C++, Java</td>
-          </tr>
-          <tr>
-            <td>Web</td>
-            <td>HTML, CSS, JS, React, SpringBoot</td>
-          </tr>
-          <tr>
-            <td>Systems</td>
-            <td>Linux, Git</td>
-          </tr>
+          <thead>
+            <tr>
+              <th scope="col">category</th>
+              <th scope="col">technologies</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>programming</td>
+              <td>c, c++, java, python, rust</td>
+            </tr>
+            <tr>
+              <td>web</td>
+              <td>html, css, javascript, react, spring boot</td>
+            </tr>
+            <tr>
+              <td>tools</td>
+              <td>linux, git, docker, nginx</td>
+            </tr>
+          </tbody>
         </table>
       </section>
 
       <section id="contact" class="box">
         <h2>Contact</h2>
+        <p>open to collaborations and opportunities</p>
         <p>
-          Email: <a href="mailto:udaykiriti624@gmail.com">udaykiriti624@gmail.com</a>
+          email — <a href="mailto:udaykiriti624@gmail.com" class="email-link"
+            data-email="udaykiriti624@gmail.com">udaykiriti624@gmail.com</a>
+          <button class="copy-btn" data-copy="udaykiriti624@gmail.com" aria-label="Copy email to clipboard"
+            title="Copy email">copy</button>
         </p>
         <div class="social-links">
-          <a href="https://github.com/udaykiriti" target="_blank">GitHub</a>
-          <a href="https://codeforces.com/profile/---" target="_blank">Codeforces</a>
-          <a href="https://leetcode.com/u/Uday9__/" target="_blank">LeetCode</a>
+          <a href="https://github.com/udaykiriti" target="_blank" rel="noopener" aria-label="GitHub profile">github</a>
+          <a href="https://leetcode.com/u/Uday9__/" target="_blank" rel="noopener"
+            aria-label="LeetCode profile">leetcode</a>
         </div>
       </section>
     </main>
 
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+      <span aria-hidden="true">^</span>
+    </button>
+
     <footer>
-      <pre class="ascii-art">
-    ____________________________
-   /                            \
-  |    [ TERMINAL SESSION ]     |
-   \____________________________/
-        </pre>
-
-      <div style="margin-bottom: 6px; font-weight: bold">
-        © 2025 Uday Kiriti
+      <pre class="ascii-art" aria-hidden="true">// terminal</pre>
+      <div>2026 uday kiriti</div>
+      <div>
+        <a href="#about">about</a>
+        <a href="#projects">projects</a>
+        <a href="#contact">contact</a>
       </div>
-
-      <div style="margin-top: 8px">
-        <a href="#about">About</a> | <a href="#projects">Projects</a> |
-        <a href="#contact">Contact</a>
-      </div>
-
-      <div style="margin-top: 8px; font-size: 12px">
-        <em>"Powered by curiosity, coffee, and late-night debugging."</em>
-      </div>
-
-      <div style="margin-top: 10px; font-size: 11px; color: #444">
-        Last updated: Dec 24, 2025 • Designed by Uday Kiriti
-      </div>
-
-      <pre class="ascii-art-small">
-    [█████████████████████] 100%
-        </pre>
+      <pre class="ascii-art-small" aria-hidden="true">EOF</pre>
     </footer>
   </div>
 
