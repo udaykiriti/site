@@ -448,15 +448,23 @@ function showToast(message, duration = 2500) {
     const copyBtns = document.querySelectorAll('.copy-btn');
 
     copyBtns.forEach(btn => {
+        const textSpan = btn.querySelector('.copy-text');
+        const originalText = textSpan ? textSpan.textContent : 'copy';
+        
         btn.addEventListener('click', async () => {
             const textToCopy = btn.dataset.copy;
 
             try {
                 await navigator.clipboard.writeText(textToCopy);
                 showToast('copied to clipboard');
-                btn.textContent = 'copied';
+                
+                // Visual feedback
+                btn.classList.add('copied');
+                if (textSpan) textSpan.textContent = 'copied!';
+                
                 setTimeout(() => {
-                    btn.textContent = 'copy';
+                    btn.classList.remove('copied');
+                    if (textSpan) textSpan.textContent = originalText;
                 }, 2000);
             } catch (err) {
                 // Fallback for older browsers
@@ -469,9 +477,13 @@ function showToast(message, duration = 2500) {
                 try {
                     document.execCommand('copy');
                     showToast('copied to clipboard');
-                    btn.textContent = 'copied';
+                    
+                    btn.classList.add('copied');
+                    if (textSpan) textSpan.textContent = 'copied!';
+                    
                     setTimeout(() => {
-                        btn.textContent = 'copy';
+                        btn.classList.remove('copied');
+                        if (textSpan) textSpan.textContent = originalText;
                     }, 2000);
                 } catch (e) {
                     showToast('failed to copy');
