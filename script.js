@@ -334,23 +334,6 @@
     });
 })();
 
-// Loader
-(function () {
-    const loader = document.getElementById('loader');
-    if (!loader) return;
-
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            loader.classList.add('hidden');
-            // Trigger header line animation
-            const header = document.querySelector('header');
-            if (header) {
-                setTimeout(() => header.classList.add('loaded'), 100);
-            }
-        }, 1000);
-    });
-})();
-
 // Typing animation
 (function () {
     const subtitle = document.querySelector('.subtitle');
