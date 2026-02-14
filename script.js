@@ -310,15 +310,15 @@
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
     
-    // Get saved theme or default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    // Get saved theme or default to rust
+    const savedTheme = localStorage.getItem('theme') || 'rust';
     html.setAttribute('data-theme', savedTheme);
     
     if (!themeToggle) return;
     
     themeToggle.addEventListener('click', () => {
         const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        const newTheme = currentTheme === 'rust' ? 'light' : 'rust';
         
         html.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);

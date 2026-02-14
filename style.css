@@ -1,16 +1,127 @@
 /* ========== Variables ========== */
-:root {
-  --bg: #0a0a0a;
-  --bg-card: #111111;
-  --bg-hover: #181818;
-  --accent: #a0a0a0;
-  --text: #f0f0f0;
+/* 
+  Performance Optimizations Applied:
+  - Specific transitions instead of "all"
+  - will-change hints on animated elements
+  - Hardware acceleration with backface-visibility
+  - Reduced motion support
+  - CSS containment for layout optimization
+  - Optimized animation timing
+*/
+:root,
+[data-theme="rust"] {
+  --bg: #1a1a1a;
+  --bg-card: #2b2b2b;
+  --bg-hover: #353535;
+  --accent: #ce422b;
+  --accent-bright: #f74c00;
+  --accent-dark: #a72f1c;
+  --text: #f5f5f5;
   --text-muted: #999999;
-  --border: #222222;
-  --border-hover: #333333;
+  --border: #3d3d3d;
+  --border-hover: #ce422b;
   --radius: 4px;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   --spacing: clamp(16px, 3vw, 32px);
+}
+
+/* Rust theme specific overrides */
+[data-theme="rust"] .box:hover {
+  background: linear-gradient(135deg, rgba(43, 43, 43, 0.95) 0%, rgba(53, 53, 53, 0.9) 100%);
+  box-shadow: 0 8px 32px rgba(206, 66, 43, 0.25),
+              inset 0 1px 0 rgba(247, 76, 0, 0.1);
+  border-color: rgba(206, 66, 43, 0.5);
+}
+
+[data-theme="rust"] .box::before {
+  background: radial-gradient(circle, rgba(247, 76, 0, 0.15) 0%, transparent 70%);
+}
+
+[data-theme="rust"] .progress-bar-fill {
+  box-shadow: 0 0 12px rgba(247, 76, 0, 0.6),
+              0 0 4px rgba(206, 66, 43, 0.8);
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent), var(--accent-bright));
+}
+
+[data-theme="rust"] .theme-toggle {
+  box-shadow: 0 2px 8px rgba(206, 66, 43, 0.2);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(43, 43, 43, 0.8) 100%);
+  border-color: rgba(206, 66, 43, 0.3);
+}
+
+[data-theme="rust"] .theme-toggle:hover {
+  box-shadow: 0 4px 16px rgba(247, 76, 0, 0.35),
+              0 0 24px rgba(206, 66, 43, 0.2);
+  border-color: var(--accent);
+}
+
+[data-theme="rust"] nav li a:hover {
+  box-shadow: 0 4px 16px rgba(206, 66, 43, 0.3),
+              0 0 20px rgba(247, 76, 0, 0.15);
+  border-color: var(--accent);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(206, 66, 43, 0.05) 100%);
+}
+
+[data-theme="rust"] .social-links a:hover,
+[data-theme="rust"] .copy-btn:hover {
+  box-shadow: 0 4px 16px rgba(206, 66, 43, 0.3),
+              0 0 24px rgba(247, 76, 0, 0.15);
+  border-color: var(--accent);
+  background: linear-gradient(135deg, var(--bg-hover) 0%, rgba(206, 66, 43, 0.08) 100%);
+}
+
+[data-theme="rust"] .copy-btn::before {
+  background: rgba(247, 76, 0, 0.2);
+}
+
+[data-theme="rust"] .back-to-top {
+  box-shadow: 0 2px 12px rgba(206, 66, 43, 0.25);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(43, 43, 43, 0.9) 100%);
+  border-color: rgba(206, 66, 43, 0.3);
+}
+
+[data-theme="rust"] .back-to-top:hover {
+  box-shadow: 0 4px 20px rgba(247, 76, 0, 0.4),
+              0 0 32px rgba(206, 66, 43, 0.2);
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+[data-theme="rust"] .email-container {
+  box-shadow: 0 2px 8px rgba(206, 66, 43, 0.15);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(43, 43, 43, 0.8) 100%);
+  border-color: rgba(206, 66, 43, 0.2);
+}
+
+[data-theme="rust"] .email-container:hover {
+  box-shadow: 0 4px 16px rgba(206, 66, 43, 0.25),
+              0 0 24px rgba(247, 76, 0, 0.1);
+  border-color: var(--accent);
+}
+
+[data-theme="rust"] .email-container::before {
+  background: linear-gradient(90deg, transparent, rgba(247, 76, 0, 0.1), transparent);
+}
+
+[data-theme="rust"] .command-palette {
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.7),
+              0 0 60px rgba(206, 66, 43, 0.15);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(43, 43, 43, 0.95) 100%);
+  border-color: rgba(206, 66, 43, 0.3);
+}
+
+[data-theme="rust"] .toast {
+  box-shadow: 0 8px 32px rgba(206, 66, 43, 0.5),
+              0 0 60px rgba(247, 76, 0, 0.3);
+  background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 50%, var(--accent-bright) 100%);
+  color: #ffffff;
+  border: 1px solid rgba(247, 76, 0, 0.5);
+}
+
+[data-theme="rust"] .konami-overlay {
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.97) 0%, rgba(43, 43, 43, 0.95) 100%);
+  backdrop-filter: blur(8px);
 }
 
 /* Light theme */
@@ -107,6 +218,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+  /* Performance optimization */
+  contain: layout style;
+}
+
+/* Rust theme - Industrial texture overlay */
+[data-theme="rust"] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(206, 66, 43, 0.02) 2px, rgba(206, 66, 43, 0.02) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(206, 66, 43, 0.02) 2px, rgba(206, 66, 43, 0.02) 4px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
 }
 
 /* Animated dot grid background */
@@ -119,6 +245,14 @@ body {
   background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
   background-size: 40px 40px;
   animation: gridMove 20s linear infinite;
+  /* Performance optimization */
+  will-change: background-position;
+  transform: translateZ(0);
+}
+
+[data-theme="rust"] .dot-grid {
+  opacity: 0.2;
+  background-image: radial-gradient(circle, rgba(206, 66, 43, 0.25) 1px, transparent 1px);
 }
 
 [data-theme="light"] .dot-grid {
@@ -137,6 +271,12 @@ body {
 ::selection {
   background: var(--text);
   color: var(--bg);
+}
+
+[data-theme="rust"] ::selection {
+  background: var(--accent);
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
 /* ========== Skip Link ========== */
@@ -190,23 +330,14 @@ body {
   font-size: 13px;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+              opacity 0.3s ease,
+              visibility 0.3s;
   z-index: 10001;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
-}
-
-/* Animated border glow */
-.toast::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  background: linear-gradient(45deg, var(--accent), var(--text), var(--accent), var(--text));
-  border-radius: var(--radius);
-  z-index: -1;
-  animation: borderRotate 3s linear infinite;
-  background-size: 300% 300%;
+  will-change: transform, opacity;
 }
 
 .toast.show {
@@ -296,6 +427,12 @@ body {
   }
 }
 
+/* Performance hint for animated elements */
+.loader,
+[data-theme="rust"] .theme-toggle:hover .sun-icon {
+  will-change: transform;
+}
+
 /* ========== Progress Bar ========== */
 .progress-bar {
   position: fixed;
@@ -329,6 +466,8 @@ body {
   width: 100%;
   position: relative;
   z-index: 1;
+  will-change: opacity;
+  contain: layout style;
 }
 
 @keyframes fadeIn {
@@ -465,9 +604,14 @@ nav li a {
   color: var(--text);
   font-size: 13px;
   letter-spacing: 0.5px;
-  transition: all var(--transition);
+  transition: transform var(--transition-fast),
+              border-color var(--transition),
+              box-shadow var(--transition),
+              color var(--transition);
   position: relative;
   overflow: hidden;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 /* Neon glow effect on hover */
@@ -478,8 +622,13 @@ nav li a::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(160, 160, 160, 0.2), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(90deg, transparent, rgba(160, 160, 160, 0.25), transparent);
+  transition: left 0.5s ease-out;
+  will-change: left;
+}
+
+[data-theme="rust"] nav li a::before {
+  background: linear-gradient(90deg, transparent, rgba(247, 76, 0, 0.25), transparent);
 }
 
 nav li a:hover::before {
@@ -495,11 +644,16 @@ nav li a::after {
   background: linear-gradient(45deg, transparent, var(--accent), transparent);
   opacity: 0;
   z-index: -1;
-  transition: opacity 0.3s;
+  transition: opacity var(--transition-fast);
+  will-change: opacity;
 }
 
 nav li a:hover::after {
   opacity: 0.3;
+}
+
+[data-theme="rust"] nav li a:hover::after {
+  opacity: 0.5;
 }
 
 nav li a:hover {
@@ -528,10 +682,20 @@ main {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 32px;
-  transition: all var(--transition);
+  transition: transform var(--transition), 
+              border-color var(--transition), 
+              box-shadow var(--transition);
   height: 100%;
   position: relative;
   overflow: hidden;
+  /* Performance optimization */
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Rust theme - Add subtle border accent */
+[data-theme="rust"] .box {
+  border-image: linear-gradient(135deg, var(--border), rgba(206, 66, 43, 0.3), var(--border)) 1;
 }
 
 .box::before {
@@ -541,11 +705,12 @@ main {
   left: var(--mouse-x, 50%);
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(160, 160, 160, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(160, 160, 160, 0.12) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity var(--transition-fast);
+  will-change: opacity;
 }
 
 .box:hover::before {
@@ -556,7 +721,7 @@ main {
   border-color: var(--border-hover);
   background: rgba(17, 17, 17, 0.5);
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
@@ -580,6 +745,11 @@ h2::after {
   height: 1px;
   background: var(--accent);
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="rust"] h2::after {
+  box-shadow: 0 0 6px var(--accent-bright);
+  height: 2px;
 }
 
 .box:hover h2::after {
@@ -647,7 +817,8 @@ strong {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  transition: all var(--transition);
+  transition: border-color var(--transition),
+              box-shadow var(--transition);
   position: relative;
   overflow: hidden;
 }
@@ -658,7 +829,8 @@ strong {
   inset: 0;
   background: linear-gradient(90deg, transparent, rgba(160, 160, 160, 0.03), transparent);
   transform: translateX(-100%);
-  transition: transform 0.6s;
+  transition: transform 0.6s ease-out;
+  will-change: transform;
 }
 
 .email-container:hover::before {
@@ -712,10 +884,15 @@ strong {
   font-family: inherit;
   font-size: 11px;
   cursor: pointer;
-  transition: all var(--transition);
+  transition: transform var(--transition-fast),
+              border-color var(--transition),
+              box-shadow var(--transition),
+              color var(--transition);
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .copy-btn svg {
@@ -738,7 +915,8 @@ strong {
   border-radius: 50%;
   background: rgba(160, 160, 160, 0.2);
   transform: translate(-50%, -50%);
-  transition: width 0.4s, height 0.4s;
+  transition: width 0.3s ease-out, height 0.3s ease-out;
+  will-change: width, height;
 }
 
 .copy-btn:hover::before {
@@ -933,6 +1111,13 @@ a:focus-visible {
   border-radius: 2px;
 }
 
+[data-theme="rust"] a:focus-visible,
+[data-theme="rust"] button:focus-visible,
+[data-theme="rust"] .copy-btn:focus-visible {
+  outline-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(247, 76, 0, 0.2);
+}
+
 /* Subtle underline for text links */
 p a,
 li a {
@@ -944,6 +1129,12 @@ li a {
 p a:hover,
 li a:hover {
   background-size: 100% 1px;
+}
+
+[data-theme="rust"] p a:hover,
+[data-theme="rust"] li a:hover {
+  text-shadow: 0 0 8px rgba(247, 76, 0, 0.5);
+  color: var(--accent-bright);
 }
 
 /* ========== Social Links ========== */
@@ -961,12 +1152,17 @@ li a:hover {
   font-size: 13px;
   color: var(--text);
   letter-spacing: 0.5px;
-  transition: all var(--transition);
+  transition: transform var(--transition-fast),
+              border-color var(--transition),
+              box-shadow var(--transition),
+              color var(--transition);
   position: relative;
   overflow: hidden;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .social-links a svg {
@@ -989,7 +1185,8 @@ li a:hover {
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, var(--bg-hover), transparent);
-  transition: left 0.5s;
+  transition: left 0.5s ease-out;
+  will-change: left;
 }
 
 .social-links a:hover::before {
@@ -1008,12 +1205,12 @@ li a:hover {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity var(--transition-fast);
+  will-change: opacity;
 }
 
 .social-links a:hover::after {
-  opacity: 1;
-  animation: borderRotate 2s linear infinite;
+  opacity: 0.6;
 }
 
 .social-links a:hover {
@@ -1031,6 +1228,11 @@ li a:hover {
   border-radius: 50%;
   z-index: 9999;
   animation: particleFade 0.6s ease-out forwards;
+}
+
+[data-theme="rust"] .particle {
+  box-shadow: 0 0 10px rgba(247, 76, 0, 0.7);
+  background: radial-gradient(circle, var(--accent-bright), var(--accent));
 }
 
 @keyframes particleFade {
@@ -1085,6 +1287,7 @@ li a:hover {
   transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: 0;
   position: relative;
+  will-change: width;
 }
 
 .skill-bar::after {
@@ -1093,6 +1296,11 @@ li a:hover {
   inset: 0;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   animation: skillShimmer 2s ease-in-out infinite;
+  will-change: transform;
+}
+
+[data-theme="rust"] .skill-bar::after {
+  background: linear-gradient(90deg, transparent, rgba(247, 76, 0, 0.35), transparent);
 }
 
 [data-theme="light"] .skill-bar::after {
@@ -1201,8 +1409,13 @@ li a:hover {
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
-  transition: all var(--transition);
+  transition: transform var(--transition),
+              opacity var(--transition),
+              visibility var(--transition),
+              border-color var(--transition-fast);
   z-index: 1000;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .back-to-top.visible {
@@ -1287,10 +1500,15 @@ footer a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition);
+  transition: transform var(--transition-fast), 
+              box-shadow var(--transition),
+              border-color var(--transition);
   z-index: 9998;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: visible;
+  /* Performance optimization */
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 /* Glowing border effect */
@@ -1301,22 +1519,13 @@ footer a:hover {
   background: linear-gradient(45deg, var(--accent), transparent, var(--accent));
   border-radius: var(--radius);
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity var(--transition-fast);
   z-index: -1;
-  animation: borderRotate 3s linear infinite;
-}
-
-@keyframes borderRotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  will-change: opacity;
 }
 
 .theme-toggle:hover::before {
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .theme-toggle:hover {
@@ -1338,57 +1547,60 @@ footer a:hover {
 
 .theme-icon {
   position: absolute;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
 }
 
 .theme-toggle .sun-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.theme-toggle .rust-icon {
   opacity: 0;
   transform: rotate(-90deg) scale(0);
 }
 
-.theme-toggle .moon-icon {
-  opacity: 1;
-  transform: rotate(0deg) scale(1);
-}
-
 [data-theme="light"] .theme-toggle .sun-icon {
-  opacity: 1;
-  transform: rotate(0deg) scale(1);
-}
-
-[data-theme="light"] .theme-toggle .moon-icon {
   opacity: 0;
   transform: rotate(90deg) scale(0);
 }
 
+[data-theme="light"] .theme-toggle .rust-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
 /* Animated rays for sun icon */
-[data-theme="light"] .theme-toggle:hover .sun-icon {
+[data-theme="rust"] .theme-toggle:hover .sun-icon {
   animation: spin 8s linear infinite;
 }
 
-@keyframes spin {
-  from {
+/* Animated rust icon in light theme */
+[data-theme="light"] .theme-toggle:hover .rust-icon {
+  animation: pulse-rust 2s ease-in-out infinite;
+}
+
+@keyframes pulse-rust {
+  0%, 100% {
     transform: rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 3px rgba(247, 76, 0, 0.6));
   }
-  to {
-    transform: rotate(360deg) scale(1);
+  50% {
+    transform: rotate(0deg) scale(1.08);
+    filter: drop-shadow(0 0 6px rgba(247, 76, 0, 0.8));
   }
-}
-
-/* Glow effect on hover */
-.theme-toggle:hover .moon-icon {
-  filter: drop-shadow(0 0 4px currentColor);
-}
-
-[data-theme="light"] .theme-toggle:hover .sun-icon {
-  filter: drop-shadow(0 0 6px rgba(255, 200, 50, 0.5));
 }
 
 /* ========== Scroll Reveal Animations ========== */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
 }
 
 .reveal.active {
@@ -1439,12 +1651,14 @@ footer a:hover {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-20px) scale(0.95);
+    transform: translateY(-20px) scale(0.98);
   }
   to {
     opacity: 1;
@@ -1464,6 +1678,11 @@ footer a:hover {
   outline: none;
 }
 
+[data-theme="rust"] .command-palette-input:focus {
+  border-bottom-color: var(--accent);
+  box-shadow: 0 1px 0 0 rgba(247, 76, 0, 0.3);
+}
+
 .command-palette-input::placeholder {
   color: var(--text-muted);
 }
@@ -1477,7 +1696,9 @@ footer a:hover {
   padding: 14px 24px;
   color: var(--text-muted);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              border-left-color var(--transition-fast);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1490,6 +1711,12 @@ footer a:hover {
   background: var(--bg-hover);
   color: var(--text);
   border-left-color: var(--accent);
+}
+
+[data-theme="rust"] .command-palette-item:hover,
+[data-theme="rust"] .command-palette-item.selected {
+  background: linear-gradient(90deg, rgba(206, 66, 43, 0.12) 0%, rgba(247, 76, 0, 0.08) 100%);
+  border-left-color: var(--accent-bright);
 }
 
 .command-palette-item-icon {
