@@ -139,7 +139,6 @@ body::before {
 
 [data-theme="rust"] .box,
 [data-theme="rust"] .featured-project,
-[data-theme="rust"] .mini-terminal,
 [data-theme="rust"] .stat,
 [data-theme="rust"] .email-container,
 [data-theme="rust"] .ascii-art,
@@ -178,7 +177,6 @@ body::before {
 
 [data-theme="rust"] .box,
 [data-theme="rust"] .featured-project,
-[data-theme="rust"] .mini-terminal,
 [data-theme="rust"] .stat,
 [data-theme="rust"] .email-container,
 [data-theme="rust"] .ascii-art,
@@ -413,16 +411,6 @@ li::before {
 
 #about ul {
   margin: 10px 0 14px;
-}
-
-.mini-terminal {
-  border: 1px solid var(--border);
-  background: var(--surface-soft);
-  color: var(--text-muted);
-  font-size: 0.78rem;
-  line-height: 1.6;
-  padding: 10px 12px;
-  white-space: pre-wrap;
 }
 
 #projects.box {
