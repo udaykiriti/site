@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="color-scheme" content="dark light" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Contact Uday Kiriti" />
   <title>Contact - Uday Kiriti</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>U</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" /></noscript>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <nav class="breadcrumb">
+    <nav class="breadcrumb" aria-label="breadcrumb">
       <a href="index.html">Uday Kiriti</a> / Contact
     </nav>
     <article>
@@ -25,7 +27,7 @@
         <span class="email-label">## email</span>
         <div class="email-container">
           <a href="mailto:udaykiriti624@gmail.com" class="email-link">udaykiriti624@gmail.com</a>
-          <button class="copy-btn" data-copy="udaykiriti624@gmail.com" aria-label="Copy email">copy</button>
+          <button type="button" class="copy-btn" data-copy="udaykiriti624@gmail.com" aria-label="Copy email">copy</button>
         </div>
         <p class="email-note">I usually reply within a day or two.</p>
       </div>

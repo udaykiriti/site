@@ -22,18 +22,28 @@
     --link:    #458588;
     --link-h:  #689d6a;
   }
+  a { text-decoration-color: rgba(69,133,136,0.3); }
+  a:hover { text-decoration-color: rgba(104,157,106,0.3); }
+  .tag-list li { border-color: var(--dim); }
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
 
 body {
-  font-family: "Inconsolata", monospace;
+  font-family: "Inconsolata", "Courier New", Courier, monospace;
   font-size: 20px;
   line-height: 1.5em;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
+}
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 /* ── Container ── */
@@ -86,6 +96,8 @@ body.index .container { padding: 1em; }
   color: var(--link);
   font-size: 1.1em;
   text-decoration: none;
+  display: inline-block;
+  padding: 0.3em 0;
 }
 .index-article ul a:hover { color: var(--link-h); text-decoration: underline; }
 
@@ -145,11 +157,6 @@ a {
 a:visited { color: var(--link); }
 a:hover { color: var(--link-h); }
 
-@media (prefers-color-scheme: light) {
-  a { text-decoration-color: rgba(69,133,136,0.3); }
-  a:hover { text-decoration-color: rgba(104,157,106,0.3); }
-}
-
 /* ── Lists ── */
 ul { list-style: none; padding: 0; margin: 0; }
 ul li {
@@ -168,26 +175,13 @@ ul li::before { content: "* "; position: absolute; left: 0; color: var(--accent)
   font-size: 0.85em;
   margin-bottom: 1em;
 }
+.about-meta span { white-space: nowrap; }
 .about-meta span::after { content: " · "; color: var(--accent); }
 .about-meta span:last-child::after { content: ""; }
 
-/* ── Featured project ── */
-.featured-project {
-  border-left: 3px solid var(--accent);
-  padding-left: 1em;
-  margin: 1.5em 0 2.5em;
-}
-.featured-label {
-  font-size: 0.7em;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 0 0 0.3em;
-}
-.featured-project h2 { margin-top: 0.2em; }
+/* ── Project item ── */
 .proj-lang { font-size: 0.7em; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-left: 0.5em; vertical-align: middle; }
 .proj-desc { color: var(--dim); font-size: 0.85em; margin: 0.2em 0 0; }
-.proj-links { margin-top: 0.8em; font-size: 0.85em; }
 
 /* ── Project list ── */
 .project-list { margin-top: 0.5em; }
