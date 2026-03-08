@@ -175,7 +175,7 @@ ul li::before { content: "* "; position: absolute; left: 0; color: var(--accent)
 .featured-project {
   border-left: 3px solid var(--accent);
   padding-left: 1em;
-  margin: 1.5em 0 2em;
+  margin: 1.5em 0 2.5em;
 }
 .featured-label {
   font-size: 0.7em;
@@ -184,26 +184,55 @@ ul li::before { content: "* "; position: absolute; left: 0; color: var(--accent)
   letter-spacing: 0.1em;
   margin: 0 0 0.3em;
 }
-.proj-meta { font-size: 0.75em; color: var(--dim); text-transform: uppercase; margin-left: 0.4em; }
-.proj-desc { color: var(--dim); font-size: 0.85em; margin: 0.15em 0 0; }
+.featured-project h2 { margin-top: 0.2em; }
+.proj-lang { font-size: 0.7em; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-left: 0.5em; vertical-align: middle; }
+.proj-desc { color: var(--dim); font-size: 0.85em; margin: 0.2em 0 0; }
+.proj-links { margin-top: 0.8em; font-size: 0.85em; }
 
 /* ── Project list ── */
-.project-list li::before { content: "* "; }
-.project-list a { font-weight: 700; color: var(--heading); }
-.project-list a:hover { color: var(--link-h); }
+.project-list { margin-top: 0.5em; }
+.project-list li {
+  padding: 0.9em 0;
+  border-bottom: 1px solid var(--bg-code);
+  margin: 0;
+}
+.project-list li:last-child { border-bottom: none; }
+.project-list li::before { content: none; }
+.proj-row { display: flex; align-items: baseline; gap: 0.5em; flex-wrap: wrap; }
+.proj-name { font-weight: 700; color: var(--heading); font-size: 1em; text-decoration: none; }
+.proj-name:hover { color: var(--link-h); }
 
 /* ── Skills ── */
-.skill-item { margin-bottom: 0.8em; }
-.skill-header { display: flex; justify-content: space-between; font-size: 0.85em; margin-bottom: 0.3em; }
-.skill-name { color: var(--text); }
-.skill-level { color: var(--dim); }
-.skill-bar-container { height: 3px; background: var(--bg-code); }
-.skill-bar { height: 100%; background: var(--accent); width: 0; transition: width 0.8s ease; }
+.resume-dl { margin: -0.5em 0 1.5em; font-size: 0.9em; }
+.edu-item { margin: 0.8em 0 1.5em; }
+.edu-row { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5em; }
+.edu-year { color: var(--dim); font-size: 0.85em; }
+.edu-sub { color: var(--dim); font-size: 0.85em; margin: 0.2em 0 0; }
+.tag-list { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0.6em 0 0.4em; }
+.tag-list li { padding: 2px 10px; border: 1px solid var(--bg-code); color: var(--dim); font-size: 0.82em; margin: 0; }
+.tag-list li::before { content: none; }
 
 /* ── Contact ── */
-.email-container { display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; margin: 1.5em 0; }
-.email-link { color: var(--link); font-size: 1.1em; }
-.email-link:hover { color: var(--link-h); }
+.email-block { margin: 2em 0 2.5em; }
+.email-label {
+  display: block;
+  font-size: 0.8em;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5em;
+}
+.email-container { display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; }
+.email-link {
+  color: var(--heading);
+  font-size: 1.15em;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 1px;
+}
+.email-link:hover { color: var(--link-h); border-bottom-color: var(--link-h); }
+.email-note { font-size: 0.8em; color: var(--dim); margin: 0.5em 0 0; }
 .copy-btn {
   background: none;
   border: 1px solid var(--bg-code);
@@ -216,6 +245,8 @@ ul li::before { content: "* "; position: absolute; left: 0; color: var(--accent)
   letter-spacing: 0.06em;
 }
 .copy-btn:hover, .copy-btn.copied { color: var(--text); border-color: var(--dim); }
+.contact-links li { margin: 0.6em 0; }
+.contact-link-desc { color: var(--dim); font-size: 0.85em; margin-left: 0.3em; }
 
 /* ── Toast ── */
 .toast {

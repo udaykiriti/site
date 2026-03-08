@@ -1,18 +1,5 @@
 'use strict';
 
-// ── Skill bars (resume.html) ──
-document.querySelectorAll('.skill-bar').forEach(bar => {
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        bar.style.width = bar.dataset.level + '%';
-        io.unobserve(bar);
-      }
-    });
-  }, { threshold: 0.3 });
-  io.observe(bar);
-});
-
 // ── Copy email (contact.html) ──
 const copyBtn = document.querySelector('.copy-btn');
 const toast   = document.getElementById('toast');
